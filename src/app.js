@@ -10,6 +10,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const app = express();
+const port = process.env.PORT || 3001;
 
 //paths
 const publicDir = path.join(__dirname, "../public");
@@ -98,6 +99,6 @@ app.get("*", (req, res) => {
   });
 });
 
-app.listen(3001, () => {
-  console.log("Port 3001 is up and running");
+app.listen(port, () => {
+  console.log("Port " + port + " is up and running");
 });
